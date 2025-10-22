@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
+import { useTranslation } from 'react-i18next';
 
 const AgeSelectionScreen = () => {
   const navigate = useNavigate();
   const { createSession, loading, error } = useSession();
+  const { t, i18n } = useTranslation();
   const [age, setAge] = useState(16);
 
   const handleSliderChange = (e) => {
@@ -22,7 +24,7 @@ const AgeSelectionScreen = () => {
         parentName: 'Parent', // You might want to collect this earlier
         childName: 'Child',   // You might want to collect this earlier
         childAge: age,
-        language: 'english',  // Get from language selection
+        language: i18n.language === 'ar' ? 'arabic' : 'english',
         mrn: randomMRN // Generate or collect MRN
       });
 
@@ -73,9 +75,10 @@ const AgeSelectionScreen = () => {
             color: 'white',
             lineHeight: '1',
             marginBottom: '30px',
-            letterSpacing: '-3px'
+            letterSpacing: '-3px',
+            padding: '60px 0'
           }}>
-            Autism
+            {t('ageSelection.title')}
           </h1>
           <h1 style={{
             fontSize: '180px',
@@ -83,9 +86,10 @@ const AgeSelectionScreen = () => {
             color: 'rgba(255, 255, 255, 0.5)',
             lineHeight: '1',
             marginBottom: '0',
-            letterSpacing: '-3px'
+            letterSpacing: '-3px',
+            padding: '60px 0'
           }}>
-            Screening Tool
+            {t('ageSelection.subtitle')}
           </h1>
         </div>
 
@@ -100,7 +104,7 @@ const AgeSelectionScreen = () => {
             color: 'white',
             marginBottom: '50px'
           }}>
-            How old are you?
+            {t('ageSelection.howOldAreYou')}
           </p>
 
           {/* Progress Dots */}
@@ -185,7 +189,7 @@ const AgeSelectionScreen = () => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              months
+              {t('ageSelection.months')}
             </div>
           </div>
         </div>
@@ -268,9 +272,9 @@ const AgeSelectionScreen = () => {
               fontWeight: '600',
               color: '#1f2937'
             }}>
-              Esc
+              {t('common.esc')}
             </span>
-            Back
+            {t('common.back')}
           </button>
 
           <button
@@ -319,7 +323,7 @@ const AgeSelectionScreen = () => {
             }}>
               {loading ? '...' : 'S'}
             </span>
-            {loading ? 'Starting...' : 'Start Screening'}
+            {loading ? t('ageSelection.starting') : t('home.startScreening')}
           </button>
         </div>
       </div>

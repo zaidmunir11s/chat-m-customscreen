@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
+import { useTranslation } from 'react-i18next';
 
 const ResultScreen = () => {
   const navigate = useNavigate();
   const { score } = useParams();
   const location = useLocation();
   const { getReport, clearSession } = useSession();
+  const { t } = useTranslation();
   const [reportData, setReportData] = useState(location.state?.report || null);
   const [loading, setLoading] = useState(!location.state?.report);
 
@@ -69,7 +71,7 @@ const ResultScreen = () => {
           color: 'white',
           textAlign: 'center'
         }}>
-          Loading report...
+          {t('result.loadingReport')}
         </div>
       </div>
     );
@@ -109,19 +111,19 @@ const ResultScreen = () => {
               color: '#1f2937'
             }}>
               <div>
-                <strong>Parent:</strong> {reportData.parent_name || 'N/A'}
+                <strong>{t('result.parent')}</strong> {reportData.parent_name || t('result.na')}
               </div>
               <div>
-                <strong>Child:</strong> {reportData.child_name || 'N/A'}
+                <strong>{t('result.child')}</strong> {reportData.child_name || t('result.na')}
               </div>
               <div>
-                <strong>Age:</strong> {reportData.child_age || 'N/A'} months
+                <strong>{t('result.age')}</strong> {reportData.child_age || t('result.na')} {t('result.months')}
               </div>
               <div>
-                <strong>MRN:</strong> {reportData.mrn || 'N/A'}
+                <strong>{t('result.mrn')}</strong> {reportData.mrn || t('result.na')}
               </div>
               <div>
-                <strong>Completed:</strong> {reportData.completed_at ? new Date(reportData.completed_at).toLocaleDateString() : 'N/A'}
+                <strong>{t('result.completed')}</strong> {reportData.completed_at ? new Date(reportData.completed_at).toLocaleDateString() : t('result.na')}
               </div>
             </div>
           </div>
@@ -142,9 +144,10 @@ const ResultScreen = () => {
             color: '#FFFFFF',
             lineHeight: '0.9',
             letterSpacing: '-13.2px',
-            margin: 0
+            margin: 0,
+            padding: '60px 0'
           }}>
-            Your score:
+            {t('result.title')}
           </h1>
         </div>
 
@@ -193,7 +196,7 @@ const ResultScreen = () => {
             fontWeight: '600',
             color: 'white'
           }}>
-            What it means?
+            {t('result.whatItMeans')}
           </div>
 
           {/* Score 0-2 Card */}
@@ -210,7 +213,7 @@ const ResultScreen = () => {
               color: '#10b981',
               marginBottom: '28px'
             }}>
-              Total Score 0-2
+              {t('result.score0to2Title')}
             </h3>
             <p style={{
               fontSize: '46px',
@@ -218,7 +221,7 @@ const ResultScreen = () => {
               lineHeight: '1.5',
               fontWeight: '400'
             }}>
-              The score indicates <strong>LOW likelihood for autism.</strong> No Follow-Up needed. Child has screened negative. Refer as needed if developmental surveillance or other tools suggest increased likelihood for autism. Rescreen at 24 months if the child is younger than 2 years old.
+              {t('result.score0to2Text')}
             </p>
           </div>
 
@@ -236,7 +239,7 @@ const ResultScreen = () => {
               color: '#f59e0b',
               marginBottom: '28px'
             }}>
-              Total Score 3-7
+              {t('result.score3to7Title')}
             </h3>
             <p style={{
               fontSize: '46px',
@@ -244,7 +247,7 @@ const ResultScreen = () => {
               lineHeight: '1.5',
               fontWeight: '400'
             }}>
-              The score indicates <strong>MODERATE likelihood for autism.</strong> Administer the M-CHAT-R Follow-Up items that correspond to the elevated likelihood responses. Only those items which were scored as elevated likelihood need to be completed. If 2 or more items continue to indicate elevated likelihood, the result is a positive screen. Refer the child immediately for (a) early intervention and (b) diagnostic evaluation.
+              {t('result.score3to7Text')}
             </p>
           </div>
 
@@ -262,7 +265,7 @@ const ResultScreen = () => {
               color: '#ef4444',
               marginBottom: '28px'
             }}>
-              Total Score: 8-20
+              {t('result.score8to20Title')}
             </h3>
             <p style={{
               fontSize: '46px',
@@ -270,7 +273,7 @@ const ResultScreen = () => {
               lineHeight: '1.5',
               fontWeight: '400'
             }}>
-              The score indicates <strong>HIGH likelihood for autism.</strong> The child has screened positive. It is not necessary to complete the M-CHAT-R Follow-Up at this time. Bypass Follow-Up, and refer immediately for (a) early intervention and (b) diagnostic evaluation.
+              {t('result.score8to20Text')}
             </p>
           </div>
         </div>
@@ -323,9 +326,9 @@ const ResultScreen = () => {
               fontWeight: '600',
               color: '#1f2937'
             }}>
-              Esc
+              {t('common.esc')}
             </span>
-            Back to main
+            {t('result.backToMain')}
           </button>
         </div>
       </div>

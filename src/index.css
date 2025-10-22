@@ -1,3 +1,6 @@
+/* Import Saudi-MoD Font */
+@import './fonts.css';
+
 * {
   margin: 0;
   padding: 0;
@@ -39,4 +42,51 @@ code {
 /* Apply Instrument Sans to all text elements */
 h1, h2, h3, h4, h5, h6, p, span, div, button, input, label {
   font-family: 'Instrument Sans', sans-serif;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] body {
+  font-family: 'Saudi-mod', 'Instrument Sans', 'Cairo', 'Tajawal', 'Amiri', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* RTL specific adjustments */
+[dir="rtl"] input,
+[dir="rtl"] textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] button {
+  direction: rtl;
+}
+
+/* Fix flex direction for RTL */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Adjust padding and margins for RTL */
+[dir="rtl"] .padding-left {
+  padding-left: 0;
+  padding-right: var(--padding-value);
+}
+
+[dir="rtl"] .padding-right {
+  padding-right: 0;
+  padding-left: var(--padding-value);
+}
+
+[dir="rtl"] .margin-left {
+  margin-left: 0;
+  margin-right: var(--margin-value);
+}
+
+[dir="rtl"] .margin-right {
+  margin-right: 0;
+  margin-left: var(--margin-value);
 }

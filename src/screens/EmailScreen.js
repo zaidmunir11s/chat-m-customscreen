@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSession } from '../context/SessionContext';
+// import { useSession } from '../context/SessionContext';
+import { useTranslation } from 'react-i18next';
 
 const EmailScreen = () => {
   const navigate = useNavigate();
-  const { sessionData, sessionId } = useSession();
+  // const { sessionData, sessionId } = useSession();
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -12,13 +14,13 @@ const EmailScreen = () => {
   const handleSubmit = async () => {
     // Validate email
     if (!email) {
-      setError('Please enter an email address');
+      setError(t('email.errorRequired'));
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address');
+      setError(t('email.errorInvalid'));
       return;
     }
 
@@ -30,12 +32,12 @@ const EmailScreen = () => {
       await new Promise(resolve => setTimeout(resolve, 1500));
 
       // Show success alert
-      alert('Results will be sent to: ' + email);
+      alert(t('email.successMessage', { email }));
 
       // Navigate to home
       navigate('/');
     } catch (err) {
-      setError('Failed to send email. Please try again.');
+      setError(t('email.errorSendFailed'));
     } finally {
       setLoading(false);
     }
@@ -62,9 +64,10 @@ const EmailScreen = () => {
             color: 'white',
             lineHeight: '1.1',
             marginBottom: '60px',
-            letterSpacing: '-3px'
+            letterSpacing: '-3px',
+            padding: '60px 0'
           }}>
-            Enter
+            {t('email.title')}
           </h1>
           <h1 style={{
             fontSize: '200px',
@@ -72,9 +75,10 @@ const EmailScreen = () => {
             color: 'rgba(255, 255, 255, 0.6)',
             lineHeight: '1.1',
             marginBottom: '80px',
-            letterSpacing: '-3px'
+            letterSpacing: '-3px',
+            padding: '60px 0'
           }}>
-            your email
+            {t('email.subtitle')}
           </h1>
           <p style={{
             fontSize: '64px',
@@ -82,8 +86,7 @@ const EmailScreen = () => {
             color: 'white',
             lineHeight: '1.4'
           }}>
-            We will send you the results on provided email<br />
-            as soon as possible
+            {t('email.description')}
           </p>
         </div>
 
@@ -146,7 +149,7 @@ const EmailScreen = () => {
                 color: '#10b981',
                 display: 'block'
               }}>
-                Email
+                {t('email.emailLabel')}
               </label>
             </div>
             <div style={{
@@ -159,7 +162,7 @@ const EmailScreen = () => {
             }}>
               <input
                 type="email"
-                placeholder="Enter email"
+                placeholder={t('email.emailPlaceholder')}
                 style={{
                   width: '100%',
                   padding: '0',
@@ -225,9 +228,9 @@ const EmailScreen = () => {
               fontWeight: '600',
               color: '#1f2937'
             }}>
-              Esc
+              {t('common.esc')}
             </span>
-            Back
+            {t('common.back')}
           </button>
 
           <button
@@ -278,7 +281,7 @@ const EmailScreen = () => {
             }}>
               {loading ? '...' : '✓'}
             </span>
-            {loading ? 'Sending...' : 'Submit'}
+            {loading ? t('email.sending') : t('email.submit')}
           </button>
         </div>
       </div>

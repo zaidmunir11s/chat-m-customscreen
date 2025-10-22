@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const IntroductionScreen = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="app-container" style={{
@@ -19,9 +21,10 @@ const IntroductionScreen = () => {
           color: 'white',
           lineHeight: '1',
           marginBottom: '40px',
-          letterSpacing: '-3px'
+          letterSpacing: '-3px',
+          padding: '60px 0'
         }}>
-          Autism
+          {t('introduction.title')}
         </h1>
         <h1 style={{
           fontSize: '200px',
@@ -29,9 +32,10 @@ const IntroductionScreen = () => {
           color: 'rgba(255, 255, 255, 0.5)',
           lineHeight: '1',
           marginBottom: '60px',
-          letterSpacing: '-3px'
+          letterSpacing: '-3px',
+          padding: '60px 0'
         }}>
-          Screening Tool
+          {t('introduction.subtitle')}
         </h1>
 
         <p style={{
@@ -40,7 +44,7 @@ const IntroductionScreen = () => {
           color: 'white',
           marginBottom: '80px'
         }}>
-          Introduction and onboarding
+          {t('introduction.description')}
         </p>
 
         {/* Progress Dots */}
@@ -100,7 +104,7 @@ const IntroductionScreen = () => {
                 color: '#1f2937',
                 marginBottom: '28px'
               }}>
-                How does it work?
+                {t('introduction.card1Title')}
               </h3>
               <p style={{
                 fontSize: '48px',
@@ -108,7 +112,7 @@ const IntroductionScreen = () => {
                 lineHeight: '1.6',
                 fontWeight: '400'
               }}>
-                A short questionnaire with about 20 yes or no questions about your child's everyday behaviors, such as eye contact, playing, or responding when his name is called.
+                {t('introduction.card1Text')}
               </p>
             </div>
 
@@ -134,7 +138,7 @@ const IntroductionScreen = () => {
                 color: '#1f2937',
                 marginBottom: '28px'
               }}>
-                Purpose of the examination
+                {t('introduction.card2Title')}
               </h3>
               <p style={{
                 fontSize: '48px',
@@ -142,7 +146,7 @@ const IntroductionScreen = () => {
                 lineHeight: '1.6',
                 fontWeight: '400'
               }}>
-                To see if your baby (16 to 30 months) is showing early signs of autism spectrum disorder.
+                {t('introduction.card2Text')}
               </p>
             </div>
 
@@ -168,7 +172,7 @@ const IntroductionScreen = () => {
                 color: '#1f2937',
                 marginBottom: '28px'
               }}>
-                Not a diagnosis
+                {t('introduction.card3Title')}
               </h3>
               <p style={{
                 fontSize: '48px',
@@ -176,7 +180,7 @@ const IntroductionScreen = () => {
                 lineHeight: '1.6',
                 fontWeight: '400'
               }}>
-                This test doesn't give a diagnosis in itself, it just helps us know if your child may need additional evaluation or support.
+                {t('introduction.card3Text')}
               </p>
             </div>
 
@@ -202,7 +206,7 @@ const IntroductionScreen = () => {
                 color: '#1f2937',
                 marginBottom: '28px'
               }}>
-                Next steps
+                {t('introduction.card4Title')}
               </h3>
               <p style={{
                 fontSize: '48px',
@@ -210,7 +214,7 @@ const IntroductionScreen = () => {
                 lineHeight: '1.6',
                 fontWeight: '400'
               }}>
-                If the results show some observations, it doesn't necessarily mean your child has autism. It means that we need to look deeper, perhaps through a follow-up interview or a referral for a more specialized assessment
+                {t('introduction.card4Text')}
               </p>
             </div>
           </div>
@@ -262,9 +266,9 @@ const IntroductionScreen = () => {
               fontWeight: '600',
               color: '#1f2937'
             }}>
-              Esc
+              {t('common.esc')}
             </span>
-            Back
+            {t('common.back')}
           </button>
 
           <button
@@ -309,7 +313,7 @@ const IntroductionScreen = () => {
             }}>
               N
             </span>
-            Next
+            {t('common.next')}
           </button>
         </div>
       </div>

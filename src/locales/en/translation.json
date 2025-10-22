@@ -1,0 +1,125 @@
+{
+  "home": {
+    "title": "Autism",
+    "screening": "Screening",
+    "tool": "Tool",
+    "subtitle": "Early detection for children aged 16 to 30 months",
+    "contactSpecialist": "Contact Specialist",
+    "startScreening": "Start Screening"
+  },
+  "ageSelection": {
+    "title": "Autism",
+    "subtitle": "Screening Tool",
+    "howOldAreYou": "How old are you?",
+    "months": "months",
+    "starting": "Starting..."
+  },
+  "introduction": {
+    "title": "Autism",
+    "subtitle": "Screening Tool",
+    "description": "Introduction and onboarding",
+    "card1Title": "How does it work?",
+    "card1Text": "A short questionnaire with about 20 yes or no questions about your child's everyday behaviors, such as eye contact, playing, or responding when his name is called.",
+    "card2Title": "Purpose of the examination",
+    "card2Text": "To see if your baby (16 to 30 months) is showing early signs of autism spectrum disorder.",
+    "card3Title": "Not a diagnosis",
+    "card3Text": "This test doesn't give a diagnosis in itself, it just helps us know if your child may need additional evaluation or support.",
+    "card4Title": "Next steps",
+    "card4Text": "If the results show some observations, it doesn't necessarily mean your child has autism. It means that we need to look deeper, perhaps through a follow-up interview or a referral for a more specialized assessment"
+  },
+  "patientInfo": {
+    "title": "Patient Information",
+    "subtitle": "Please enter the following details",
+    "parentGuardianName": "Parent/Guardian Full Name",
+    "enterParentName": "Enter parent name",
+    "childName": "Child's Name",
+    "enterChildName": "Enter child's name",
+    "childAge": "Child's Age (Months)",
+    "enterChildAge": "Enter child's age",
+    "medicalRecordNumber": "Medical Record Number (MRN)",
+    "enterMRN": "Enter MRN",
+    "dateOfBirth": "Date of Birth"
+  },
+  "chat": {
+    "title": "Autism Screening",
+    "monthsOld": "months old",
+    "screeningComplete": "✓ Screening Complete! Redirecting...",
+    "thinking": "Thinking",
+    "watchButton": "Watch",
+    "listenButton": "Listen",
+    "playingButton": "Playing",
+    "writeMessage": "Write your message here",
+    "recording": "Recording...",
+    "transcribing": "Transcribing...",
+    "voiceButton": "Voice",
+    "stopButton": "Stop",
+    "finishScreening": "Finish Screening"
+  },
+  "videoModal": {
+    "firstExample": "First Example",
+    "secondExample": "Second Example",
+    "thirdExample": "Third Example",
+    "fourthExample": "Fourth Example",
+    "exampleDescription": "Here is something written related to the example"
+  },
+  "thankYou": {
+    "title": "Thank you!",
+    "question": "Do you want to see results?",
+    "description": "You can see it now or receive it by email",
+    "laterByEmail": "Later by Email",
+    "seeNow": "See Now"
+  },
+  "email": {
+    "title": "Enter",
+    "subtitle": "your email",
+    "description": "We will send you the results on provided email as soon as possible",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter email",
+    "errorRequired": "Please enter an email address",
+    "errorInvalid": "Please enter a valid email address",
+    "errorSendFailed": "Failed to send email. Please try again.",
+    "successMessage": "Results will be sent to: {{email}}",
+    "sending": "Sending...",
+    "submit": "Submit"
+  },
+  "contactSpecialist": {
+    "title": "Contact",
+    "subtitle": "Specialist",
+    "description": "Fill in the form to contact our specialist",
+    "parentGuardianName": "Parent / Guardian Name",
+    "childName": "Child Name",
+    "medicalRecordNumber": "Medical Record Number",
+    "assessmentDate": "Assessment Date",
+    "enterName": "Enter name",
+    "enterNumber": "Enter number",
+    "submitForm": "Submit Form"
+  },
+  "result": {
+    "title": "Your score:",
+    "whatItMeans": "What it means?",
+    "loadingReport": "Loading report...",
+    "backToMain": "Back to main",
+    "parent": "Parent:",
+    "child": "Child:",
+    "age": "Age:",
+    "months": "months",
+    "mrn": "MRN:",
+    "completed": "Completed:",
+    "na": "N/A",
+    "score0to2Title": "Total Score 0-2",
+    "score0to2Text": "The score indicates LOW likelihood for autism. No Follow-Up needed. Child has screened negative. Refer as needed if developmental surveillance or other tools suggest increased likelihood for autism. Rescreen at 24 months if the child is younger than 2 years old.",
+    "score3to7Title": "Total Score 3-7",
+    "score3to7Text": "The score indicates MODERATE likelihood for autism. Administer the M-CHAT-R Follow-Up items that correspond to the elevated likelihood responses. Only those items which were scored as elevated likelihood need to be completed. If 2 or more items continue to indicate elevated likelihood, the result is a positive screen. Refer the child immediately for (a) early intervention and (b) diagnostic evaluation.",
+    "score8to20Title": "Total Score: 8-20",
+    "score8to20Text": "The score indicates HIGH likelihood for autism. The child has screened positive. It is not necessary to complete the M-CHAT-R Follow-Up at this time. Bypass Follow-Up, and refer immediately for (a) early intervention and (b) diagnostic evaluation."
+  },
+  "common": {
+    "back": "Back",
+    "continue": "Continue",
+    "next": "Next",
+    "loading": "Loading...",
+    "yes": "Yes",
+    "no": "No",
+    "esc": "Esc"
+  }
+}

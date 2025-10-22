@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const ContactSpecialistScreen = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     parentName: '',
     childName: '',
@@ -32,9 +34,10 @@ const ContactSpecialistScreen = () => {
             color: 'white',
             lineHeight: '0.95',
             marginBottom: '60px',
-            letterSpacing: '-3px'
+            letterSpacing: '-3px',
+            padding: '60px 0'
           }}>
-            Contact
+            {t('contactSpecialist.title')}
           </h1>
           <h1 style={{
             fontSize: '220px',
@@ -42,9 +45,10 @@ const ContactSpecialistScreen = () => {
             color: 'rgba(255, 255, 255, 0.6)',
             lineHeight: '0.95',
             marginBottom: '80px',
-            letterSpacing: '-3px'
+            letterSpacing: '-3px',
+            padding: '60px 0'
           }}>
-            Specialist
+            {t('contactSpecialist.subtitle')}
           </h1>
           <p style={{
             fontSize: '64px',
@@ -52,7 +56,7 @@ const ContactSpecialistScreen = () => {
             color: 'white',
             lineHeight: '1.4'
           }}>
-            Fill in the form to contact our specialist
+            {t('contactSpecialist.description')}
           </p>
         </div>
 
@@ -77,7 +81,7 @@ const ContactSpecialistScreen = () => {
                   color: '#10b981',
                   display: 'block'
                 }}>
-                  Parent / Guardian Name
+                  {t('contactSpecialist.parentGuardianName')}
                 </label>
               </div>
               <div style={{
@@ -90,7 +94,7 @@ const ContactSpecialistScreen = () => {
               }}>
                 <input
                   type="text"
-                  placeholder="Enter name"
+                  placeholder={t('contactSpecialist.enterName')}
                   style={{
                     width: '100%',
                     padding: '0',
@@ -139,7 +143,7 @@ const ContactSpecialistScreen = () => {
                   color: '#10b981',
                   display: 'block'
                 }}>
-                  Child Name
+                  {t('contactSpecialist.childName')}
                 </label>
               </div>
               <div style={{
@@ -152,7 +156,7 @@ const ContactSpecialistScreen = () => {
               }}>
                 <input
                   type="text"
-                  placeholder="Enter name"
+                  placeholder={t('contactSpecialist.enterName')}
                   style={{
                     width: '100%',
                     padding: '0',
@@ -201,7 +205,7 @@ const ContactSpecialistScreen = () => {
                   color: '#10b981',
                   display: 'block'
                 }}>
-                  Medical Record Number
+                  {t('contactSpecialist.medicalRecordNumber')}
                 </label>
               </div>
               <div style={{
@@ -214,7 +218,7 @@ const ContactSpecialistScreen = () => {
               }}>
                 <input
                   type="text"
-                  placeholder="Enter number"
+                  placeholder={t('contactSpecialist.enterNumber')}
                   style={{
                     width: '100%',
                     padding: '0',
@@ -263,7 +267,7 @@ const ContactSpecialistScreen = () => {
                   color: '#10b981',
                   display: 'block'
                 }}>
-                  Assessment Date
+                  {t('contactSpecialist.assessmentDate')}
                 </label>
               </div>
               <div style={{
@@ -333,9 +337,9 @@ const ContactSpecialistScreen = () => {
               fontWeight: '700',
               color: '#1f2937'
             }}>
-              Esc
+              {t('common.esc')}
             </span>
-            Back
+            {t('common.back')}
           </button>
 
           <button
@@ -378,7 +382,7 @@ const ContactSpecialistScreen = () => {
             }}>
               ✓
             </span>
-            Submit Form
+            {t('contactSpecialist.submitForm')}
           </button>
         </div>
       </div>

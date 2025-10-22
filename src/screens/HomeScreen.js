@@ -1,10 +1,11 @@
 // src/screens/HomeScreen.js - WITH EXACT CONTAINER PROPERTIES
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const HomeScreen = () => {
   const navigate = useNavigate();
-  const [selectedLanguage, setSelectedLanguage] = useState('English');
+  const { t, isRTL, setEnglish, setArabic, language } = useLanguage();
 
   return (
     <div className="app-container" style={{
@@ -41,7 +42,7 @@ const HomeScreen = () => {
             justifyContent: 'center'
           }}>
             <h1 style={{
-              fontFamily: 'Instrument Sans',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
               fontSize: '413px',
               fontWeight: '500',
               color: '#FFFFFF',
@@ -49,12 +50,13 @@ const HomeScreen = () => {
               letterSpacing: '-16.52px',
               textAlign: 'center',
               margin: 0,
+              padding: '60px 0',
               background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              Autism
+              {t('home.title')}
             </h1>
           </div>
 
@@ -68,7 +70,7 @@ const HomeScreen = () => {
             justifyContent: 'center'
           }}>
             <h1 style={{
-              fontFamily: 'Instrument Sans',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
               fontSize: '413px',
               fontWeight: '500',
               color: '#52FFA0',
@@ -76,12 +78,13 @@ const HomeScreen = () => {
               letterSpacing: '-16.52px',
               textAlign: 'center',
               margin: 0,
+              padding: '60px 0',
               background: 'radial-gradient(circle, #52FFA0 0%, #D3FFEB 50%, #60FAAD 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              Screening
+              {t('home.screening')}
             </h1>
           </div>
 
@@ -95,7 +98,7 @@ const HomeScreen = () => {
             justifyContent: 'center'
           }}>
             <h1 style={{
-              fontFamily: 'Instrument Sans',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
               fontSize: '413px',
               fontWeight: '500',
               color: '#FFFFFF',
@@ -103,12 +106,13 @@ const HomeScreen = () => {
               letterSpacing: '-16.52px',
               textAlign: 'center',
               margin: 0,
+              padding: '60px 0',
               background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              Tool
+              {t('home.tool')}
             </h1>
           </div>
         </div>
@@ -123,10 +127,11 @@ const HomeScreen = () => {
           fontSize: '64px',
           fontWeight: '400',
           color: 'white',
-          lineHeight: '1.4'
+          lineHeight: '1.4',
+          direction: isRTL ? 'rtl' : 'ltr',
+          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans'
         }}>
-          Early detection for children<br />
-          aged 16 to 30 months
+          {t('home.subtitle')}
         </div>
 
         {/* Language Selection Container */}
@@ -145,7 +150,7 @@ const HomeScreen = () => {
         }}>
           {/* English Button */}
           <button
-            onClick={() => setSelectedLanguage('English')}
+            onClick={setEnglish}
             style={{
               minWidth: '340px',
               display: 'flex',
@@ -154,8 +159,8 @@ const HomeScreen = () => {
               gap: '20px',
               padding: '32px 48px',
               borderRadius: '36px',
-              background: selectedLanguage === 'English' ? '#10b981' : 'transparent',
-              color: selectedLanguage === 'English' ? 'white' : '#1f2937',
+              background: language === 'english' ? '#10b981' : 'transparent',
+              color: language === 'english' ? 'white' : '#1f2937',
               fontSize: '56px',
               fontWeight: '600',
               border: 'none',
@@ -170,7 +175,7 @@ const HomeScreen = () => {
 
           {/* Arabic Button */}
           <button
-            onClick={() => setSelectedLanguage('Arabic')}
+            onClick={setArabic}
             style={{
               minWidth: '340px',
               display: 'flex',
@@ -179,18 +184,19 @@ const HomeScreen = () => {
               gap: '20px',
               padding: '32px 48px',
               borderRadius: '36px',
-              background: selectedLanguage === 'Arabic' ? '#10b981' : 'transparent',
-              color: selectedLanguage === 'Arabic' ? 'white' : '#1f2937',
+              background: language === 'arabic' ? '#10b981' : 'transparent',
+              color: language === 'arabic' ? 'white' : '#1f2937',
               fontSize: '56px',
               fontWeight: '600',
               border: 'none',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
-              whiteSpace: 'nowrap'
+              whiteSpace: 'nowrap',
+              fontFamily: 'Saudi-mod, sans-serif'
             }}
           >
             <span style={{ fontSize: '56px' }}>🇸🇦</span>
-            انجليزي
+            عربي
           </button>
         </div>
 
@@ -218,7 +224,8 @@ const HomeScreen = () => {
               border: '4px solid #e5e7eb',
               cursor: 'pointer',
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans'
             }}
             onClick={() => navigate('/contact-specialist')}
             onMouseOver={(e) => {
@@ -246,7 +253,7 @@ const HomeScreen = () => {
             }}>
               H
             </span>
-            Contact Specialist
+            {t('home.contactSpecialist')}
           </button>
 
           <button
@@ -263,7 +270,8 @@ const HomeScreen = () => {
               border: 'none',
               cursor: 'pointer',
               boxShadow: '0 4px 20px rgba(16, 185, 129, 0.3)',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans'
             }}
             onClick={() => navigate('/introduction')}
             onMouseOver={(e) => {
@@ -291,7 +299,7 @@ const HomeScreen = () => {
             }}>
               S
             </span>
-            Start Screening
+            {t('home.startScreening')}
           </button>
         </div>
       </div>

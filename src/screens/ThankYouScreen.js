@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
+import { useTranslation } from 'react-i18next';
 
 const ThankYouScreen = () => {
   const navigate = useNavigate();
   const { getReport } = useSession();
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -81,13 +83,14 @@ const ThankYouScreen = () => {
             letterSpacing: '-14.92px',
             textAlign: 'center',
             margin: 0,
+            padding: '60px 0',
             whiteSpace: 'nowrap',
             background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
           }}>
-            Thank you!
+            {t('thankYou.title')}
           </h1>
         </div>
 
@@ -103,8 +106,8 @@ const ThankYouScreen = () => {
           color: 'white',
           lineHeight: '1.4'
         }}>
-          Do you want to see results?<br />
-          You can see it now or receive it by email
+          {t('thankYou.question')}<br />
+          {t('thankYou.description')}
         </div>
 
         {/* Bottom Buttons */}
@@ -159,7 +162,7 @@ const ThankYouScreen = () => {
             }}>
               E
             </span>
-            Later by Email
+            {t('thankYou.laterByEmail')}
           </button>
 
           <button
@@ -208,7 +211,7 @@ const ThankYouScreen = () => {
             }}>
               {loading ? '...' : 'S'}
             </span>
-            {loading ? 'Loading...' : 'See Now'}
+            {loading ? t('common.loading') : t('thankYou.seeNow')}
           </button>
         </div>
       </div>
