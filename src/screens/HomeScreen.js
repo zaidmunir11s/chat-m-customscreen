@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const HomeScreen = () => {
   const navigate = useNavigate();
-  const { t, isRTL, setEnglish, setArabic, language } = useLanguage();
+  const { t, setEnglish, setArabic, language } = useLanguage();
 
   return (
     <div className="app-container" style={{
@@ -42,19 +42,20 @@ const HomeScreen = () => {
             justifyContent: 'center'
           }}>
             <h1 style={{
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
-              fontSize: '413px',
-              fontWeight: '500',
-              color: '#FFFFFF',
-              lineHeight: '0.8',
-              letterSpacing: '-16.52px',
               textAlign: 'center',
-              margin: 0,
-              padding: '60px 0',
-              background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%)',
+              WebkitTextStrokeWidth: '2px',
+              WebkitTextStrokeColor: '#FFF',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+              fontSize: '413px',
+              fontStyle: 'normal',
+              fontWeight: '500',
+              lineHeight: '80%',
+              letterSpacing: '-16.52px',
+              background: 'linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.70) 100%)',
+              backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
+              margin: 0
             }}>
               {t('home.title')}
             </h1>
@@ -70,7 +71,7 @@ const HomeScreen = () => {
             justifyContent: 'center'
           }}>
             <h1 style={{
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
               fontSize: '413px',
               fontWeight: '500',
               color: '#52FFA0',
@@ -98,19 +99,20 @@ const HomeScreen = () => {
             justifyContent: 'center'
           }}>
             <h1 style={{
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
-              fontSize: '413px',
-              fontWeight: '500',
-              color: '#FFFFFF',
-              lineHeight: '0.8',
-              letterSpacing: '-16.52px',
               textAlign: 'center',
-              margin: 0,
-              padding: '60px 0',
-              background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%)',
+              WebkitTextStrokeWidth: '2px',
+              WebkitTextStrokeColor: '#FFF',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+              fontSize: '413px',
+              fontStyle: 'normal',
+              fontWeight: '500',
+              lineHeight: '80%',
+              letterSpacing: '-16.52px',
+              background: 'linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.70) 100%)',
+              backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
+              margin: 0
             }}>
               {t('home.tool')}
             </h1>
@@ -128,8 +130,7 @@ const HomeScreen = () => {
           fontWeight: '400',
           color: 'white',
           lineHeight: '1.4',
-          direction: isRTL ? 'rtl' : 'ltr',
-          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans'
+          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
         }}>
           {t('home.subtitle')}
         </div>
@@ -225,7 +226,7 @@ const HomeScreen = () => {
               cursor: 'pointer',
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
               transition: 'all 0.3s ease',
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans'
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
             }}
             onClick={() => navigate('/contact-specialist')}
             onMouseOver={(e) => {
@@ -271,7 +272,7 @@ const HomeScreen = () => {
               cursor: 'pointer',
               boxShadow: '0 4px 20px rgba(16, 185, 129, 0.3)',
               transition: 'all 0.3s ease',
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans'
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
             }}
             onClick={() => navigate('/introduction')}
             onMouseOver={(e) => {

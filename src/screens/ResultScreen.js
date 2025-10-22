@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../context/LanguageContext';
 
 const ResultScreen = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const ResultScreen = () => {
   const location = useLocation();
   const { getReport, clearSession } = useSession();
   const { t } = useTranslation();
+  const { language } = useLanguage();
   const [reportData, setReportData] = useState(location.state?.report || null);
   const [loading, setLoading] = useState(!location.state?.report);
 
@@ -69,7 +71,8 @@ const ResultScreen = () => {
           fontSize: '64px',
           fontWeight: '600',
           color: 'white',
-          textAlign: 'center'
+          textAlign: 'center',
+          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
         }}>
           {t('result.loadingReport')}
         </div>
@@ -90,45 +93,6 @@ const ResultScreen = () => {
         minHeight: '100%',
         position: 'relative'
       }}>
-        {/* Report Metadata Section */}
-        {reportData && (
-          <div style={{
-            position: 'absolute',
-            top: '40px',
-            left: '160px',
-            right: '160px',
-            background: 'rgba(255, 255, 255, 0.9)',
-            backdropFilter: 'blur(10px)',
-            borderRadius: '40px',
-            padding: '40px 60px',
-            border: '3px solid rgba(255, 255, 255, 0.8)'
-          }}>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '40px',
-              fontSize: '36px',
-              color: '#1f2937'
-            }}>
-              <div>
-                <strong>{t('result.parent')}</strong> {reportData.parent_name || t('result.na')}
-              </div>
-              <div>
-                <strong>{t('result.child')}</strong> {reportData.child_name || t('result.na')}
-              </div>
-              <div>
-                <strong>{t('result.age')}</strong> {reportData.child_age || t('result.na')} {t('result.months')}
-              </div>
-              <div>
-                <strong>{t('result.mrn')}</strong> {reportData.mrn || t('result.na')}
-              </div>
-              <div>
-                <strong>{t('result.completed')}</strong> {reportData.completed_at ? new Date(reportData.completed_at).toLocaleDateString() : t('result.na')}
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Title - Your score: */}
         <div style={{
           position: 'absolute',
@@ -138,7 +102,7 @@ const ResultScreen = () => {
           textAlign: 'center'
         }}>
           <h1 style={{
-            fontFamily: 'Instrument Sans',
+            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
             fontSize: '330px',
             fontWeight: '500',
             color: '#FFFFFF',

@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../context/LanguageContext';
 
 const AgeSelectionScreen = () => {
   const navigate = useNavigate();
   const { createSession, loading, error } = useSession();
   const { t, i18n } = useTranslation();
+  const { language } = useLanguage();
   const [age, setAge] = useState(16);
 
   const handleSliderChange = (e) => {
@@ -70,25 +72,23 @@ const AgeSelectionScreen = () => {
           paddingTop: '120px'
         }}>
           <h1 style={{
-            fontSize: '180px',
-            fontWeight: '700',
-            color: 'white',
-            lineHeight: '1',
-            marginBottom: '30px',
-            letterSpacing: '-3px',
-            padding: '60px 0'
+            textAlign: 'center',
+            WebkitTextStrokeWidth: '2px',
+            WebkitTextStrokeColor: '#FFF',
+            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+            fontSize: '230px',
+            fontStyle: 'normal',
+            fontWeight: '500',
+            lineHeight: '80%',
+            letterSpacing: '-9.2px',
+            background: 'linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.70) 100%)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            marginBottom: '0'
           }}>
             {t('ageSelection.title')}
-          </h1>
-          <h1 style={{
-            fontSize: '180px',
-            fontWeight: '700',
-            color: 'rgba(255, 255, 255, 0.5)',
-            lineHeight: '1',
-            marginBottom: '0',
-            letterSpacing: '-3px',
-            padding: '60px 0'
-          }}>
+            <br />
             {t('ageSelection.subtitle')}
           </h1>
         </div>
@@ -102,7 +102,8 @@ const AgeSelectionScreen = () => {
             fontSize: '64px',
             fontWeight: '600',
             color: 'white',
-            marginBottom: '50px'
+            marginBottom: '50px',
+            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
           }}>
             {t('ageSelection.howOldAreYou')}
           </p>
@@ -177,7 +178,7 @@ const AgeSelectionScreen = () => {
             justifyContent: 'center'
           }}>
             <div style={{
-              fontFamily: 'Instrument Sans',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
               fontSize: '150px',
               fontWeight: '400',
               color: '#FFFFFF',
@@ -246,7 +247,8 @@ const AgeSelectionScreen = () => {
               border: '4px solid #e5e7eb',
               cursor: 'pointer',
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
             }}
             onClick={() => navigate('/introduction')}
             onMouseOver={(e) => {
@@ -292,7 +294,8 @@ const AgeSelectionScreen = () => {
               cursor: loading ? 'not-allowed' : 'pointer',
               boxShadow: '0 4px 20px rgba(16, 185, 129, 0.3)',
               transition: 'all 0.3s ease',
-              opacity: loading ? 0.7 : 1
+              opacity: loading ? 0.7 : 1,
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
             }}
             onClick={handleStartScreening}
             disabled={loading}

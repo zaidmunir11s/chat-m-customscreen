@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { useSession } from '../context/SessionContext';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../context/LanguageContext';
 
 const EmailScreen = () => {
   const navigate = useNavigate();
   // const { sessionData, sessionId } = useSession();
   const { t } = useTranslation();
+  const { language } = useLanguage();
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -59,24 +61,38 @@ const EmailScreen = () => {
         {/* Title Section */}
         <div style={{ textAlign: 'center', marginBottom: '200px' }}>
           <h1 style={{
+            textAlign: 'center',
+            WebkitTextStrokeWidth: '2px',
+            WebkitTextStrokeColor: '#FFF',
+            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
             fontSize: '200px',
-            fontWeight: '700',
-            color: 'white',
-            lineHeight: '1.1',
-            marginBottom: '60px',
-            letterSpacing: '-3px',
-            padding: '60px 0'
+            fontStyle: 'normal',
+            fontWeight: '500',
+            lineHeight: '80%',
+            letterSpacing: '-9.2px',
+            background: 'linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.70) 100%)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            marginBottom: '60px'
           }}>
             {t('email.title')}
           </h1>
           <h1 style={{
+            textAlign: 'center',
+            WebkitTextStrokeWidth: '2px',
+            WebkitTextStrokeColor: '#FFF',
+            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
             fontSize: '200px',
-            fontWeight: '700',
-            color: 'rgba(255, 255, 255, 0.6)',
-            lineHeight: '1.1',
-            marginBottom: '80px',
-            letterSpacing: '-3px',
-            padding: '60px 0'
+            fontStyle: 'normal',
+            fontWeight: '500',
+            lineHeight: '80%',
+            letterSpacing: '-9.2px',
+            background: 'linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.70) 100%)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            marginBottom: '80px'
           }}>
             {t('email.subtitle')}
           </h1>
@@ -84,7 +100,8 @@ const EmailScreen = () => {
             fontSize: '64px',
             fontWeight: '400',
             color: 'white',
-            lineHeight: '1.4'
+            lineHeight: '1.4',
+            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
           }}>
             {t('email.description')}
           </p>
@@ -131,53 +148,50 @@ const EmailScreen = () => {
             }}>✦</span>
           </div>
 
-          {/* Email Input Field */}
+          {/* Email Input Field - Split into two containers */}
+          {/* Email Label Container */}
           <div style={{
-            background: 'rgba(255, 255, 255, 0.5)',
-            backdropFilter: 'blur(10px)',
-            borderRadius: '48px',
-            padding: '0',
-            border: '3px solid rgba(255, 255, 255, 0.8)',
-            overflow: 'hidden'
+            borderRadius: '50px 50px 0 0',
+            border: '4px solid #FFF',
+            background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), rgba(255, 255, 255, 0.50)',
+            padding: '48px 70px 32px 70px'
           }}>
-            <div style={{
-              padding: '48px 70px 32px 70px'
+            <label style={{
+              fontSize: '56px',
+              fontWeight: '600',
+              color: '#10b981',
+              display: 'block'
             }}>
-              <label style={{
-                fontSize: '56px',
-                fontWeight: '600',
-                color: '#10b981',
-                display: 'block'
-              }}>
-                {t('email.emailLabel')}
-              </label>
-            </div>
-            <div style={{
-              height: '0px',
-              borderTop: '3px solid rgba(255, 255, 255, 0.8)',
-              margin: '0'
-            }}></div>
-            <div style={{
-              padding: '32px 70px 48px 70px'
-            }}>
-              <input
-                type="email"
-                placeholder={t('email.emailPlaceholder')}
-                style={{
-                  width: '100%',
-                  padding: '0',
-                  border: 'none',
-                  background: 'transparent',
-                  color: 'rgba(16, 185, 129, 0.4)',
-                  fontSize: '52px',
-                  outline: 'none',
-                  fontWeight: '400'
-                }}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={loading}
-              />
-            </div>
+              {t('email.emailLabel')}
+            </label>
+          </div>
+
+          {/* Your Email Input Container */}
+          <div style={{
+            borderRadius: '0 0 50px 50px',
+            borderRight: '4px solid #FFF',
+            borderBottom: '4px solid #FFF',
+            borderLeft: '4px solid #FFF',
+            background: 'rgba(255, 255, 255, 0.50)',
+            padding: '32px 70px 48px 70px'
+          }}>
+            <input
+              type="email"
+              placeholder={t('email.emailPlaceholder')}
+              style={{
+                width: '100%',
+                padding: '0',
+                border: 'none',
+                background: 'transparent',
+                color: 'rgba(16, 185, 129, 0.4)',
+                fontSize: '52px',
+                outline: 'none',
+                fontWeight: '400'
+              }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={loading}
+            />
           </div>
         </div>
 

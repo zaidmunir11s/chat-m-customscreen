@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSession } from '../context/SessionContext';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../context/LanguageContext';
 
 const ThankYouScreen = () => {
   const navigate = useNavigate();
   const { getReport } = useSession();
   const { t } = useTranslation();
+  const { language } = useLanguage();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -18,11 +20,24 @@ const ThankYouScreen = () => {
     try {
       const report = await getReport();
 
+      console.log('Report received:', report);
+
       // Navigate to result screen with score and pass report data
-      if (report && typeof report.final_score === 'number') {
-        navigate(`/result/${report.final_score}`, { state: { report } });
+      // The backend returns assessment_score.total_score
+      let score;
+      if (report && report.assessment_score && typeof report.assessment_score.total_score === 'number') {
+        score = report.assessment_score.total_score;
+      } else if (report && typeof report.final_score === 'number') {
+        score = report.final_score;
+      } else if (report && typeof report.score === 'number') {
+        score = report.score;
+      }
+
+      if (score !== undefined) {
+        navigate(`/result/${score}`, { state: { report } });
       } else {
-        setError('Report not ready yet. Please try again.');
+        console.error('Report structure:', report);
+        setError('Unable to retrieve score from report. Please try again.');
       }
     } catch (err) {
       console.error('Failed to get report:', err);
@@ -75,7 +90,7 @@ const ThankYouScreen = () => {
           justifyContent: 'center'
         }}>
           <h1 style={{
-            fontFamily: 'Instrument Sans',
+            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
             fontSize: '373px',
             fontWeight: '500',
             color: '#FFFFFF',

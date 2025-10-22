@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../context/LanguageContext';
 
 const ContactSpecialistScreen = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     parentName: '',
     childName: '',
@@ -18,7 +20,10 @@ const ContactSpecialistScreen = () => {
 
   return (
     <div className="app-container" style={{
-      background: 'linear-gradient(180deg, #10b981 0%, #34d399 40%, #d1fae5 70%, #ffffff 100%)'
+      backgroundImage: 'url(/bg.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
     }}>
       <div style={{
         padding: '180px 120px',
@@ -29,24 +34,38 @@ const ContactSpecialistScreen = () => {
         {/* Title Section */}
         <div style={{ textAlign: 'center', marginBottom: '140px' }}>
           <h1 style={{
+            textAlign: 'center',
+            WebkitTextStrokeWidth: '2px',
+            WebkitTextStrokeColor: '#FFF',
+            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
             fontSize: '220px',
-            fontWeight: '700',
-            color: 'white',
-            lineHeight: '0.95',
-            marginBottom: '60px',
-            letterSpacing: '-3px',
-            padding: '60px 0'
+            fontStyle: 'normal',
+            fontWeight: '500',
+            lineHeight: '80%',
+            letterSpacing: '-9.2px',
+            background: 'linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.70) 100%)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            marginBottom: '60px'
           }}>
             {t('contactSpecialist.title')}
           </h1>
           <h1 style={{
+            textAlign: 'center',
+            WebkitTextStrokeWidth: '2px',
+            WebkitTextStrokeColor: '#FFF',
+            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
             fontSize: '220px',
-            fontWeight: '700',
-            color: 'rgba(255, 255, 255, 0.6)',
-            lineHeight: '0.95',
-            marginBottom: '80px',
-            letterSpacing: '-3px',
-            padding: '60px 0'
+            fontStyle: 'normal',
+            fontWeight: '500',
+            lineHeight: '80%',
+            letterSpacing: '-9.2px',
+            background: 'linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.70) 100%)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            marginBottom: '80px'
           }}>
             {t('contactSpecialist.subtitle')}
           </h1>
@@ -54,7 +73,8 @@ const ContactSpecialistScreen = () => {
             fontSize: '64px',
             fontWeight: '400',
             color: 'white',
-            lineHeight: '1.4'
+            lineHeight: '1.4',
+            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans'
           }}>
             {t('contactSpecialist.description')}
           </p>
@@ -64,51 +84,48 @@ const ContactSpecialistScreen = () => {
         <div style={{ flex: 1, maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
           {/* Parent/Guardian Name */}
           <div style={{ marginBottom: '40px' }}>
+            {/* Label Container */}
             <div style={{
-              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%)',
-              backdropFilter: 'blur(10px)',
-              borderRadius: '48px',
-              padding: '0',
-              border: '4px solid rgba(255, 255, 255, 1)',
-              overflow: 'hidden'
+              borderRadius: '50px 50px 0 0',
+              border: '4px solid #FFF',
+              background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), rgba(255, 255, 255, 0.50)',
+              padding: '48px 70px 32px 70px'
             }}>
-              <div style={{
-                padding: '48px 70px 32px 70px'
+              <label style={{
+                fontSize: '56px',
+                fontWeight: '600',
+                color: '#10b981',
+                display: 'block'
               }}>
-                <label style={{
-                  fontSize: '56px',
-                  fontWeight: '600',
-                  color: '#10b981',
-                  display: 'block'
-                }}>
-                  {t('contactSpecialist.parentGuardianName')}
-                </label>
-              </div>
-              <div style={{
-                height: '0px',
-                borderTop: '4px solid rgba(255, 255, 255, 1)',
-                margin: '0'
-              }}></div>
-              <div style={{
-                padding: '32px 70px 48px 70px'
-              }}>
-                <input
-                  type="text"
-                  placeholder={t('contactSpecialist.enterName')}
-                  style={{
-                    width: '100%',
-                    padding: '0',
-                    border: 'none',
-                    background: 'transparent',
-                    color: 'rgba(16, 185, 129, 0.4)',
-                    fontSize: '52px',
-                    outline: 'none',
-                    fontWeight: '400'
-                  }}
-                  value={formData.parentName}
-                  onChange={(e) => setFormData({...formData, parentName: e.target.value})}
-                />
-              </div>
+                {t('contactSpecialist.parentGuardianName')}
+              </label>
+            </div>
+
+            {/* Input Container */}
+            <div style={{
+              borderRadius: '0 0 50px 50px',
+              borderRight: '4px solid #FFF',
+              borderBottom: '4px solid #FFF',
+              borderLeft: '4px solid #FFF',
+              background: 'rgba(255, 255, 255, 0.50)',
+              padding: '32px 70px 48px 70px'
+            }}>
+              <input
+                type="text"
+                placeholder={t('contactSpecialist.enterName')}
+                style={{
+                  width: '100%',
+                  padding: '0',
+                  border: 'none',
+                  background: 'transparent',
+                  color: 'rgba(16, 185, 129, 0.4)',
+                  fontSize: '52px',
+                  outline: 'none',
+                  fontWeight: '400'
+                }}
+                value={formData.parentName}
+                onChange={(e) => setFormData({...formData, parentName: e.target.value})}
+              />
             </div>
           </div>
 
@@ -126,51 +143,48 @@ const ContactSpecialistScreen = () => {
 
           {/* Child Name */}
           <div style={{ marginBottom: '40px' }}>
+            {/* Label Container */}
             <div style={{
-              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%)',
-              backdropFilter: 'blur(10px)',
-              borderRadius: '48px',
-              padding: '0',
-              border: '4px solid rgba(255, 255, 255, 1)',
-              overflow: 'hidden'
+              borderRadius: '50px 50px 0 0',
+              border: '4px solid #FFF',
+              background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), rgba(255, 255, 255, 0.50)',
+              padding: '48px 70px 32px 70px'
             }}>
-              <div style={{
-                padding: '48px 70px 32px 70px'
+              <label style={{
+                fontSize: '56px',
+                fontWeight: '600',
+                color: '#10b981',
+                display: 'block'
               }}>
-                <label style={{
-                  fontSize: '56px',
-                  fontWeight: '600',
-                  color: '#10b981',
-                  display: 'block'
-                }}>
-                  {t('contactSpecialist.childName')}
-                </label>
-              </div>
-              <div style={{
-                height: '0px',
-                borderTop: '4px solid rgba(255, 255, 255, 1)',
-                margin: '0'
-              }}></div>
-              <div style={{
-                padding: '32px 70px 48px 70px'
-              }}>
-                <input
-                  type="text"
-                  placeholder={t('contactSpecialist.enterName')}
-                  style={{
-                    width: '100%',
-                    padding: '0',
-                    border: 'none',
-                    background: 'transparent',
-                    color: 'rgba(16, 185, 129, 0.4)',
-                    fontSize: '52px',
-                    outline: 'none',
-                    fontWeight: '400'
-                  }}
-                  value={formData.childName}
-                  onChange={(e) => setFormData({...formData, childName: e.target.value})}
-                />
-              </div>
+                {t('contactSpecialist.childName')}
+              </label>
+            </div>
+
+            {/* Input Container */}
+            <div style={{
+              borderRadius: '0 0 50px 50px',
+              borderRight: '4px solid #FFF',
+              borderBottom: '4px solid #FFF',
+              borderLeft: '4px solid #FFF',
+              background: 'rgba(255, 255, 255, 0.50)',
+              padding: '32px 70px 48px 70px'
+            }}>
+              <input
+                type="text"
+                placeholder={t('contactSpecialist.enterName')}
+                style={{
+                  width: '100%',
+                  padding: '0',
+                  border: 'none',
+                  background: 'transparent',
+                  color: 'rgba(16, 185, 129, 0.4)',
+                  fontSize: '52px',
+                  outline: 'none',
+                  fontWeight: '400'
+                }}
+                value={formData.childName}
+                onChange={(e) => setFormData({...formData, childName: e.target.value})}
+              />
             </div>
           </div>
 
@@ -188,51 +202,48 @@ const ContactSpecialistScreen = () => {
 
           {/* Medical Record Number */}
           <div style={{ marginBottom: '40px' }}>
+            {/* Label Container */}
             <div style={{
-              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%)',
-              backdropFilter: 'blur(10px)',
-              borderRadius: '48px',
-              padding: '0',
-              border: '4px solid rgba(255, 255, 255, 1)',
-              overflow: 'hidden'
+              borderRadius: '50px 50px 0 0',
+              border: '4px solid #FFF',
+              background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), rgba(255, 255, 255, 0.50)',
+              padding: '48px 70px 32px 70px'
             }}>
-              <div style={{
-                padding: '48px 70px 32px 70px'
+              <label style={{
+                fontSize: '56px',
+                fontWeight: '600',
+                color: '#10b981',
+                display: 'block'
               }}>
-                <label style={{
-                  fontSize: '56px',
-                  fontWeight: '600',
-                  color: '#10b981',
-                  display: 'block'
-                }}>
-                  {t('contactSpecialist.medicalRecordNumber')}
-                </label>
-              </div>
-              <div style={{
-                height: '0px',
-                borderTop: '4px solid rgba(255, 255, 255, 1)',
-                margin: '0'
-              }}></div>
-              <div style={{
-                padding: '32px 70px 48px 70px'
-              }}>
-                <input
-                  type="text"
-                  placeholder={t('contactSpecialist.enterNumber')}
-                  style={{
-                    width: '100%',
-                    padding: '0',
-                    border: 'none',
-                    background: 'transparent',
-                    color: 'rgba(16, 185, 129, 0.4)',
-                    fontSize: '52px',
-                    outline: 'none',
-                    fontWeight: '400'
-                  }}
-                  value={formData.medicalRecord}
-                  onChange={(e) => setFormData({...formData, medicalRecord: e.target.value})}
-                />
-              </div>
+                {t('contactSpecialist.medicalRecordNumber')}
+              </label>
+            </div>
+
+            {/* Input Container */}
+            <div style={{
+              borderRadius: '0 0 50px 50px',
+              borderRight: '4px solid #FFF',
+              borderBottom: '4px solid #FFF',
+              borderLeft: '4px solid #FFF',
+              background: 'rgba(255, 255, 255, 0.50)',
+              padding: '32px 70px 48px 70px'
+            }}>
+              <input
+                type="text"
+                placeholder={t('contactSpecialist.enterNumber')}
+                style={{
+                  width: '100%',
+                  padding: '0',
+                  border: 'none',
+                  background: 'transparent',
+                  color: 'rgba(16, 185, 129, 0.4)',
+                  fontSize: '52px',
+                  outline: 'none',
+                  fontWeight: '400'
+                }}
+                value={formData.medicalRecord}
+                onChange={(e) => setFormData({...formData, medicalRecord: e.target.value})}
+              />
             </div>
           </div>
 
@@ -250,43 +261,40 @@ const ContactSpecialistScreen = () => {
 
           {/* Assessment Date */}
           <div style={{ marginBottom: '100px' }}>
+            {/* Label Container */}
             <div style={{
-              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%)',
-              backdropFilter: 'blur(10px)',
-              borderRadius: '48px',
-              padding: '0',
-              border: '4px solid rgba(255, 255, 255, 1)',
-              overflow: 'hidden'
+              borderRadius: '50px 50px 0 0',
+              border: '4px solid #FFF',
+              background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), rgba(255, 255, 255, 0.50)',
+              padding: '48px 70px 32px 70px'
+            }}>
+              <label style={{
+                fontSize: '56px',
+                fontWeight: '600',
+                color: '#10b981',
+                display: 'block'
+              }}>
+                {t('contactSpecialist.assessmentDate')}
+              </label>
+            </div>
+
+            {/* Date Display Container */}
+            <div style={{
+              borderRadius: '0 0 50px 50px',
+              borderRight: '4px solid #FFF',
+              borderBottom: '4px solid #FFF',
+              borderLeft: '4px solid #FFF',
+              background: 'rgba(255, 255, 255, 0.50)',
+              padding: '32px 70px 48px 70px'
             }}>
               <div style={{
-                padding: '48px 70px 32px 70px'
+                width: '100%',
+                padding: '0',
+                color: '#1f2937',
+                fontSize: '52px',
+                fontWeight: '500'
               }}>
-                <label style={{
-                  fontSize: '56px',
-                  fontWeight: '600',
-                  color: '#10b981',
-                  display: 'block'
-                }}>
-                  {t('contactSpecialist.assessmentDate')}
-                </label>
-              </div>
-              <div style={{
-                height: '0px',
-                borderTop: '4px solid rgba(255, 255, 255, 1)',
-                margin: '0'
-              }}></div>
-              <div style={{
-                padding: '48px 70px'
-              }}>
-                <div style={{
-                  width: '100%',
-                  padding: '0',
-                  color: '#1f2937',
-                  fontSize: '52px',
-                  fontWeight: '500'
-                }}>
-                  {formData.assessmentDate}
-                </div>
+                {formData.assessmentDate}
               </div>
             </div>
           </div>

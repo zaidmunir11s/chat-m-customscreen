@@ -7,7 +7,7 @@ import APIService from '../services/api';
 
 const ChatScreen = () => {
   const navigate = useNavigate();
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
   const { sessionId, sessionData, messages, sendMessage, loading, error, conversationComplete } = useSession();
   const [inputMessage, setInputMessage] = useState('');
   const [isPlaying, setIsPlaying] = useState(null);
@@ -397,14 +397,22 @@ const ChatScreen = () => {
         textAlign: 'center'
       }}>
         <h1 style={{
-          fontSize: '160px',
-          fontWeight: '600',
-          color: 'white',
-          marginBottom: '60px',
-          letterSpacing: '-2px',
-          padding: '60px 0'
+          textAlign: 'center',
+          WebkitTextStrokeWidth: '2px',
+          WebkitTextStrokeColor: '#FFF',
+          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+          fontSize: '230px',
+          fontStyle: 'normal',
+          fontWeight: '500',
+          lineHeight: '80%',
+          letterSpacing: '-9.2px',
+          background: 'linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.70) 100%)',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          marginBottom: '60px'
         }}>
-          {t('chatTitle')}
+          {t('chat.title')}
         </h1>
 
         <div style={{

@@ -1,10 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../context/LanguageContext';
 
 const IntroductionScreen = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { language } = useLanguage();
 
   return (
     <div className="app-container" style={{
@@ -16,25 +18,23 @@ const IntroductionScreen = () => {
       <div style={{ padding: '180px 120px', textAlign: 'center' }}>
         {/* Title Section */}
         <h1 style={{
-          fontSize: '200px',
-          fontWeight: '700',
-          color: 'white',
-          lineHeight: '1',
-          marginBottom: '40px',
-          letterSpacing: '-3px',
-          padding: '60px 0'
+          textAlign: 'center',
+          WebkitTextStrokeWidth: '2px',
+          WebkitTextStrokeColor: '#FFF',
+          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+          fontSize: '230px',
+          fontStyle: 'normal',
+          fontWeight: '500',
+          lineHeight: '80%',
+          letterSpacing: '-9.2px',
+          background: 'linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.70) 100%)',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          marginBottom: '60px'
         }}>
           {t('introduction.title')}
-        </h1>
-        <h1 style={{
-          fontSize: '200px',
-          fontWeight: '700',
-          color: 'rgba(255, 255, 255, 0.5)',
-          lineHeight: '1',
-          marginBottom: '60px',
-          letterSpacing: '-3px',
-          padding: '60px 0'
-        }}>
+          <br />
           {t('introduction.subtitle')}
         </h1>
 
@@ -42,7 +42,8 @@ const IntroductionScreen = () => {
           fontSize: '64px',
           fontWeight: '400',
           color: 'white',
-          marginBottom: '80px'
+          marginBottom: '80px',
+          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
         }}>
           {t('introduction.description')}
         </p>
@@ -102,7 +103,8 @@ const IntroductionScreen = () => {
                 fontSize: '64px',
                 fontWeight: '700',
                 color: '#1f2937',
-                marginBottom: '28px'
+                marginBottom: '28px',
+                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card1Title')}
               </h3>
@@ -110,7 +112,8 @@ const IntroductionScreen = () => {
                 fontSize: '48px',
                 color: '#4b5563',
                 lineHeight: '1.6',
-                fontWeight: '400'
+                fontWeight: '400',
+                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card1Text')}
               </p>
@@ -136,7 +139,8 @@ const IntroductionScreen = () => {
                 fontSize: '64px',
                 fontWeight: '700',
                 color: '#1f2937',
-                marginBottom: '28px'
+                marginBottom: '28px',
+                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card2Title')}
               </h3>
@@ -144,7 +148,8 @@ const IntroductionScreen = () => {
                 fontSize: '48px',
                 color: '#4b5563',
                 lineHeight: '1.6',
-                fontWeight: '400'
+                fontWeight: '400',
+                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card2Text')}
               </p>
@@ -170,7 +175,8 @@ const IntroductionScreen = () => {
                 fontSize: '64px',
                 fontWeight: '700',
                 color: '#1f2937',
-                marginBottom: '28px'
+                marginBottom: '28px',
+                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card3Title')}
               </h3>
@@ -178,7 +184,8 @@ const IntroductionScreen = () => {
                 fontSize: '48px',
                 color: '#4b5563',
                 lineHeight: '1.6',
-                fontWeight: '400'
+                fontWeight: '400',
+                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card3Text')}
               </p>
@@ -204,7 +211,8 @@ const IntroductionScreen = () => {
                 fontSize: '64px',
                 fontWeight: '700',
                 color: '#1f2937',
-                marginBottom: '28px'
+                marginBottom: '28px',
+                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card4Title')}
               </h3>
@@ -212,7 +220,8 @@ const IntroductionScreen = () => {
                 fontSize: '48px',
                 color: '#4b5563',
                 lineHeight: '1.6',
-                fontWeight: '400'
+                fontWeight: '400',
+                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card4Text')}
               </p>
@@ -240,7 +249,8 @@ const IntroductionScreen = () => {
               border: '4px solid #e5e7eb',
               cursor: 'pointer',
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
             }}
             onClick={() => navigate('/')}
             onMouseOver={(e) => {
@@ -285,7 +295,8 @@ const IntroductionScreen = () => {
               border: 'none',
               cursor: 'pointer',
               boxShadow: '0 4px 20px rgba(16, 185, 129, 0.3)',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
             }}
             onClick={() => navigate('/age-selection')}
             onMouseOver={(e) => {
