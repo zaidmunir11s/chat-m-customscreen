@@ -75,7 +75,7 @@ const AgeSelectionScreen = () => {
             textAlign: 'center',
             WebkitTextStrokeWidth: '2px',
             WebkitTextStrokeColor: '#FFF',
-            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+            fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif',
             fontSize: '230px',
             fontStyle: 'normal',
             fontWeight: '500',
@@ -103,7 +103,7 @@ const AgeSelectionScreen = () => {
             fontWeight: '600',
             color: 'white',
             marginBottom: '50px',
-            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+            fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
           }}>
             {t('ageSelection.howOldAreYou')}
           </p>
@@ -178,7 +178,7 @@ const AgeSelectionScreen = () => {
             justifyContent: 'center'
           }}>
             <div style={{
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
+              fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : 'Instrument Sans',
               fontSize: '150px',
               fontWeight: '400',
               color: '#FFFFFF',
@@ -248,7 +248,7 @@ const AgeSelectionScreen = () => {
               cursor: 'pointer',
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
               transition: 'all 0.3s ease',
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+              fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
             }}
             onClick={() => navigate('/introduction')}
             onMouseOver={(e) => {
@@ -295,7 +295,7 @@ const AgeSelectionScreen = () => {
               boxShadow: '0 4px 20px rgba(16, 185, 129, 0.3)',
               transition: 'all 0.3s ease',
               opacity: loading ? 0.7 : 1,
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+              fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
             }}
             onClick={handleStartScreening}
             disabled={loading}

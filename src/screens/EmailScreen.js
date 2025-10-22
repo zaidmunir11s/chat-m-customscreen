@@ -64,7 +64,7 @@ const EmailScreen = () => {
             textAlign: 'center',
             WebkitTextStrokeWidth: '2px',
             WebkitTextStrokeColor: '#FFF',
-            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
+            fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : 'Instrument Sans',
             fontSize: '200px',
             fontStyle: 'normal',
             fontWeight: '500',
@@ -82,7 +82,7 @@ const EmailScreen = () => {
             textAlign: 'center',
             WebkitTextStrokeWidth: '2px',
             WebkitTextStrokeColor: '#FFF',
-            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
+            fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : 'Instrument Sans',
             fontSize: '200px',
             fontStyle: 'normal',
             fontWeight: '500',
@@ -101,7 +101,7 @@ const EmailScreen = () => {
             fontWeight: '400',
             color: 'white',
             lineHeight: '1.4',
-            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+            fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
           }}>
             {t('email.description')}
           </p>

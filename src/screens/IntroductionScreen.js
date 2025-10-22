@@ -21,7 +21,7 @@ const IntroductionScreen = () => {
           textAlign: 'center',
           WebkitTextStrokeWidth: '2px',
           WebkitTextStrokeColor: '#FFF',
-          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+          fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif',
           fontSize: '230px',
           fontStyle: 'normal',
           fontWeight: '500',
@@ -43,7 +43,7 @@ const IntroductionScreen = () => {
           fontWeight: '400',
           color: 'white',
           marginBottom: '80px',
-          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+          fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
         }}>
           {t('introduction.description')}
         </p>
@@ -104,7 +104,7 @@ const IntroductionScreen = () => {
                 fontWeight: '700',
                 color: '#1f2937',
                 marginBottom: '28px',
-                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+                fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card1Title')}
               </h3>
@@ -113,7 +113,7 @@ const IntroductionScreen = () => {
                 color: '#4b5563',
                 lineHeight: '1.6',
                 fontWeight: '400',
-                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+                fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card1Text')}
               </p>
@@ -140,7 +140,7 @@ const IntroductionScreen = () => {
                 fontWeight: '700',
                 color: '#1f2937',
                 marginBottom: '28px',
-                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+                fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card2Title')}
               </h3>
@@ -149,7 +149,7 @@ const IntroductionScreen = () => {
                 color: '#4b5563',
                 lineHeight: '1.6',
                 fontWeight: '400',
-                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+                fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card2Text')}
               </p>
@@ -176,7 +176,7 @@ const IntroductionScreen = () => {
                 fontWeight: '700',
                 color: '#1f2937',
                 marginBottom: '28px',
-                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+                fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card3Title')}
               </h3>
@@ -185,7 +185,7 @@ const IntroductionScreen = () => {
                 color: '#4b5563',
                 lineHeight: '1.6',
                 fontWeight: '400',
-                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+                fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card3Text')}
               </p>
@@ -212,7 +212,7 @@ const IntroductionScreen = () => {
                 fontWeight: '700',
                 color: '#1f2937',
                 marginBottom: '28px',
-                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+                fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card4Title')}
               </h3>
@@ -221,7 +221,7 @@ const IntroductionScreen = () => {
                 color: '#4b5563',
                 lineHeight: '1.6',
                 fontWeight: '400',
-                fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+                fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
               }}>
                 {t('introduction.card4Text')}
               </p>
@@ -250,7 +250,7 @@ const IntroductionScreen = () => {
               cursor: 'pointer',
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
               transition: 'all 0.3s ease',
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+              fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
             }}
             onClick={() => navigate('/')}
             onMouseOver={(e) => {
@@ -296,7 +296,7 @@ const IntroductionScreen = () => {
               cursor: 'pointer',
               boxShadow: '0 4px 20px rgba(16, 185, 129, 0.3)',
               transition: 'all 0.3s ease',
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+              fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
             }}
             onClick={() => navigate('/age-selection')}
             onMouseOver={(e) => {

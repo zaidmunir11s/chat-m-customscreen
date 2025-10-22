@@ -72,7 +72,7 @@ const ResultScreen = () => {
           fontWeight: '600',
           color: 'white',
           textAlign: 'center',
-          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif'
+          fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif'
         }}>
           {t('result.loadingReport')}
         </div>
@@ -102,7 +102,7 @@ const ResultScreen = () => {
           textAlign: 'center'
         }}>
           <h1 style={{
-            fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : 'Instrument Sans',
+            fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : 'Instrument Sans',
             fontSize: '330px',
             fontWeight: '500',
             color: '#FFFFFF',

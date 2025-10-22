@@ -41,11 +41,11 @@ const HomeScreen = () => {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <h1 style={{
+            <h1 className={language === 'arabic' ? 'arabic-title' : ''} style={{
               textAlign: 'center',
               WebkitTextStrokeWidth: '2px',
               WebkitTextStrokeColor: '#FFF',
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+              fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif',
               fontSize: '413px',
               fontStyle: 'normal',
               fontWeight: '500',
@@ -70,8 +70,8 @@ const HomeScreen = () => {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <h1 style={{
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+            <h1 className={language === 'arabic' ? 'arabic-title' : ''} style={{
+              fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif',
               fontSize: '413px',
               fontWeight: '500',
               color: '#52FFA0',
@@ -98,11 +98,11 @@ const HomeScreen = () => {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <h1 style={{
+            <h1 className={language === 'arabic' ? 'arabic-title' : ''} style={{
               textAlign: 'center',
               WebkitTextStrokeWidth: '2px',
               WebkitTextStrokeColor: '#FFF',
-              fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+              fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif',
               fontSize: '413px',
               fontStyle: 'normal',
               fontWeight: '500',
@@ -193,7 +193,7 @@ const HomeScreen = () => {
               cursor: 'pointer',
               transition: 'all 0.3s ease',
               whiteSpace: 'nowrap',
-              fontFamily: 'Saudi-mod, sans-serif'
+              fontFamily: 'Saudi-MoD, sans-serif'
             }}
           >
             <span style={{ fontSize: '56px' }}>🇸🇦</span>

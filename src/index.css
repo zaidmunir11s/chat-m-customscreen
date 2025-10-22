@@ -51,7 +51,28 @@ h1, h2, h3, h4, h5, h6, p, span, div, button, input, label {
 }
 
 [dir="rtl"] body {
-  font-family: 'Saudi-mod', 'Instrument Sans', 'Cairo', 'Tajawal', 'Amiri', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Saudi-MoD', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Apply Saudi-MoD font to all text elements in RTL */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] div,
+[dir="rtl"] button,
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] label,
+[dir="rtl"] a,
+[dir="rtl"] li,
+[dir="rtl"] td,
+[dir="rtl"] th {
+  font-family: 'Saudi-MoD', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
 /* RTL specific adjustments */

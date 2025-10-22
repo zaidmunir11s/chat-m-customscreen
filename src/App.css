@@ -2,6 +2,16 @@
   font-family: 'Instrument Sans', sans-serif;
 }
 
+/* Apply Saudi-MoD font to all elements when in RTL mode (Arabic) */
+[dir="rtl"] * {
+  font-family: 'Saudi-MoD', sans-serif !important;
+}
+
+/* Specific class for Arabic titles */
+.arabic-title {
+  font-family: 'Saudi-MoD', sans-serif !important;
+}
+
 .app-container {
   width: 2160px;
   height: 3840px;
@@ -76,6 +86,11 @@
   transition: all 0.3s ease;
   border: none;
   outline: none;
+  flex-direction: row;
+}
+
+[dir="rtl"] .btn {
+  flex-direction: row-reverse;
 }
 
 .btn-primary {
@@ -184,6 +199,11 @@
   border-radius: 48px;
   padding: 80px;
   min-height: 600px;
+  text-align: left;
+}
+
+[dir="rtl"] .info-card {
+  text-align: right;
 }
 
 .info-card-icon {
@@ -341,11 +361,23 @@
   border-bottom-left-radius: 16px;
 }
 
+[dir="rtl"] .message-bot {
+  align-self: flex-end;
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 16px;
+}
+
 .message-user {
   background: #10b981;
   color: white;
   align-self: flex-end;
   border-bottom-right-radius: 16px;
+}
+
+[dir="rtl"] .message-user {
+  align-self: flex-start;
+  border-bottom-right-radius: 48px;
+  border-bottom-left-radius: 16px;
 }
 
 .message-time {
@@ -435,6 +467,11 @@
   color: white;
   margin-bottom: 32px;
   display: block;
+  text-align: left;
+}
+
+[dir="rtl"] .form-label {
+  text-align: right;
 }
 
 .form-input {
@@ -447,6 +484,11 @@
   color: white;
   font-size: 56px;
   outline: none;
+  text-align: left;
+}
+
+[dir="rtl"] .form-input {
+  text-align: right;
 }
 
 .form-input::placeholder {
@@ -484,6 +526,11 @@
   border-radius: 48px;
   padding: 80px;
   margin-bottom: 60px;
+  text-align: left;
+}
+
+[dir="rtl"] .result-info-card {
+  text-align: right;
 }
 
 .result-info-card.highlighted {

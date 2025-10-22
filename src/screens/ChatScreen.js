@@ -400,7 +400,7 @@ const ChatScreen = () => {
           textAlign: 'center',
           WebkitTextStrokeWidth: '2px',
           WebkitTextStrokeColor: '#FFF',
-          fontFamily: language === 'arabic' ? 'Saudi-mod, sans-serif' : '"Instrument Sans", sans-serif',
+          fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif',
           fontSize: '230px',
           fontStyle: 'normal',
           fontWeight: '500',
