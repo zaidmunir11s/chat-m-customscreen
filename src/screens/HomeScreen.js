@@ -41,7 +41,7 @@ const HomeScreen = () => {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <h1 className={language === 'arabic' ? 'arabic-title' : ''} style={{
+            <h1 style={{
               textAlign: 'center',
               WebkitTextStrokeWidth: '2px',
               WebkitTextStrokeColor: '#FFF',
@@ -70,7 +70,7 @@ const HomeScreen = () => {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <h1 className={language === 'arabic' ? 'arabic-title' : ''} style={{
+            <h1 style={{
               fontFamily: language === 'arabic' ? 'Saudi-MoD, sans-serif' : '"Instrument Sans", sans-serif',
               fontSize: '413px',
               fontWeight: '500',
@@ -98,7 +98,7 @@ const HomeScreen = () => {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <h1 className={language === 'arabic' ? 'arabic-title' : ''} style={{
+            <h1 style={{
               textAlign: 'center',
               WebkitTextStrokeWidth: '2px',
               WebkitTextStrokeColor: '#FFF',

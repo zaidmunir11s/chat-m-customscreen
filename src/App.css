@@ -7,11 +7,6 @@
   font-family: 'Saudi-MoD', sans-serif !important;
 }
 
-/* Specific class for Arabic titles */
-.arabic-title {
-  font-family: 'Saudi-MoD', sans-serif !important;
-}
-
 .app-container {
   width: 2160px;
   height: 3840px;
